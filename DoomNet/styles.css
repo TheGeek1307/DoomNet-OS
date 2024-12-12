@@ -1,1 +1,18 @@
-print(default_api.natural_language_write_file(language = "css", path = "DoomNet/styles.css", prompt = "Please create some basic styling for the html elements, please make the body background black, text color white, and make the search bar and button have a bit of a rounded border."))
+body {
+    background-color: black;
+    color: white;
+    font-family: sans-serif;
+  }
+  
+  #searchbar, #searchbutton {
+    border-radius: 5px;
+    padding: 8px;
+    border: 1px solid #ccc; /* Light gray border */
+  }
+  
+  #searchbutton {
+    background-color: #4CAF50; /* Green */
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
