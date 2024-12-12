@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Database Search</title>
+<style>
+body {
+  font-family: sans-serif;
+}
+#search-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+#search-input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-right: 10px;
+  width: 300px;
+}
+#search-button {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+#results-container {
+  margin-top: 20px;
+}
+.result-item {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+</style>
+</head>
+<body>
+  <h1>Database Search</h1>
+  <div id="search-container">
+    <input type="text" id="search-input" placeholder="Enter search term">
+    <button id="search-button">Search</button>
+  </div>
+  <div id="results-container"></div>
+
+  <script>
+    const searchInput = document.getElementById('search-input');
+    const searchButton = document.getElementById('search-button');
+    const resultsContainer = document.getElementById('results-container');
+
+    searchButton.addEventListener('click', () => {
+      const searchTerm = searchInput.value.toLowerCase();
+      fetch('data.json') // Replace 'data.json' with the actual path to your JSON file
+        .then(response => response.json())
+        .then(data => {
+          const results = data.filter(item => 
+            Object.values(item).some(value => 
+              String(value).toLowerCase().includes(searchTerm)
+            )
+          );
+          displayResults(results);
+        })
+        .catch(error => console.error('Error fetching data:', error));
+    });
+
+    function displayResults(results) {
+      resultsContainer.innerHTML = ''; // Clear previous results
+      if (results.length === 0) {
+        resultsContainer.innerHTML = '<p>No results found.</p>';
+        return;
+      }
+      results.forEach(item => {
+        const resultItem = document.createElement('div');
+        resultItem.classList.add('result-item');
+        resultItem.innerHTML = `
+          <p><strong>Name:</strong> ${item.name}</p>
+          <p><strong>Description:</strong> ${item.description}</p>
+          </p><strong>Other Field:</strong> ${item.other_field}</p>
+          <!-- Add other fields as needed -->
+        `;
+        resultsContainer.appendChild(resultItem);
+      });
+    }
+  </script>
+</body>
+</html>
