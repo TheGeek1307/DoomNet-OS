@@ -1,0 +1,146 @@
+.middlebutton {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.calculator {
+  position: fixed;
+  top: 50px;
+  left: 10px;
+}
+
+.top-right-icon {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+}
+
+.changelog {
+  position: fixed;
+  bottom: 10px;
+  left: 10px;
+  color: black;
+  background-color: #ffffff;
+  border: 4px solid black;
+  border-radius: 8px;
+}
+
+.download {
+  position: fixed;
+  bottom: 10px;
+  center: 10px;
+}
+
+h1{
+  background-color: #ffffff;
+  border: 4px solid black;
+  border-radius: 8px;
+}
+
+.anchor{
+  color: black;
+  background-color: #ffffff;
+  border: 4px solid black;
+  border-radius: 8px;
+}
+
+.wiki-button {
+  position: fixed;
+  bottom: 10px;
+  left: 110px;
+  color: black;
+  background-color: #ffffff;
+  border: 4px solid black;
+  border-radius: 8px;
+}
+
+.google-forms {
+  position: fixed;
+  bottom: 10px;
+  left: 150px;
+  color: black;
+  background-color: #ffffff;
+  border: 4px solid black;
+  border-radius: 8px;
+}
+
+#Site-List {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  color: black;
+  background-color: #ffffff;
+  border: 4px solid black;
+  border-radius: 8px;
+}
+
+.hs {
+  position: fixed;
+  bottom: 10px;
+  right: 20px;
+}
+
+.future-patches {
+  position: fixed;
+  bottom: 10px;
+  left: 30px;
+}
+
+.copyright-sign {
+  position: fixed;
+  bottom: 10px;
+  right: 130px;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  background-image: url('Images/christmas-pixelart.png'); /* Ensure this path is correct */
+  background-size: cover; /* Optional: makes the background cover the entire screen */
+  background-position: center center; /* Optional: center the background image */
+}
+
+.search-container {
+  text-align: center;
+}
+
+.search-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#search-input {
+  width: 300px;
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid #ddd;
+  border-radius: 4px 0 0 4px;
+}
+
+#search-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #ffd900;
+  color: rgb(41, 41, 41);
+  border: none;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+}
+
+#search-button:hover {
+  background-color: #45a049;
+}
+
+.search-results {
+  margin-top: 20px;
+  width: 80%;
+  max-width: 600px;
+  color: white;
+}
