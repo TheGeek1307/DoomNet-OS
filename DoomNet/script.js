@@ -3,7 +3,7 @@ document.getElementById('searchbutton').addEventListener('click', function() {
     const resultsDiv = document.getElementById('results');
     resultsDiv.innerHTML = ''; // Clear previous results
 
-    fetch('./data.json')
+    fetch('DoomNet/data.json')
         .then(response => response.json())
         .then(data => {
             const filteredData = data.filter(website => {
